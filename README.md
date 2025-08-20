@@ -88,33 +88,33 @@ dec0_ln1.bin
 Project Structure:
 
 esp32-tiny-transformer/
-├── arduino_sketch/
-│   ├── esp32_tiny_transformer.ino
-│   ├── tiny_transformer.h
-│   ├── tiny_transformer.cpp
-│   ├── weights_io.h
-│   ├── weights_io.cpp
-│   ├── bpe_tokenizer.h
-│   ├── bpe_tokenizer.cpp
-│   ├── SDVirtualRAM.h / .cpp
-│   ├── SDVirtualRAM_Meta.h / .cpp
-│   ├── SDVirtualRAMDebugger.h / .cpp
-│   ├── MatrixPageManager.h / .cpp
-│   ├── sd_vram_adapter.cpp
-│   └── README.md   ← sketch-level usage guide
-│
-├── sd_export/   (example SD contents for testing)
-│   ├── index.json
-│   ├── vocab.json
-│   ├── merges.txt
-│   ├── emb_weight_page0.bin
-│   ├── dec0_Wq_page0.bin
-│   └── ... etc
-│
-├── tools/
-│   ├── export_train_quant.py   (Python exporter)
-│   └── sample_corpus.txt
-│
-├── LICENSE
-├── README.md   ← main project doc
-└── CONTRIBUTING.md
+  arduino_sketch/
+       esp32_tiny_transformer.ino
+       tiny_transformer.h
+       tiny_transformer.cpp
+       weights_io.h
+       weights_io.cpp
+       bpe_tokenizer.h
+       bpe_tokenizer.cpp
+       SDVirtualRAM.h / .cpp
+       SDVirtualRAM_Meta.h / .cpp
+       SDVirtualRAMDebugger.h / .cpp
+       MatrixPageManager.h / .cpp
+       sd_vram_adapter.cpp
+       README.md   ← sketch-level usage guide
+
+sd_export/   (example SD contents for testing)
+         index.json
+         vocab.json
+         merges.txt
+         emb_weight_page0.bin
+         dec0_Wq_page0.bin
+         ......... etc
+
+tools/
+       export_train_quant.py   (Python exporter)
+       sample_corpus.txt
+
+LICENSE
+README.md   -- main project doc
+CONTRIBUTING.md
