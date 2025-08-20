@@ -1,11 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 # esp32-tiny-transformer based offline serial chatbot
 ---------------------------------------------------------------------------------------------------
-A minimal **Transformer + BPE tokenizer chatbot** that runs **fully on ESP32-S3** —  
+A minimal **Transformer + BPE tokenizer chatbot** that runs **fully on ESP32-S3**   
 no Wi-Fi, no server, no cloud, even with no internet. Just **on-chip int8 inference** + SD-card weights.
 
 ---------------------------------------------------------------------------------------------------
-Just type into the Serial-Monitor, the **E32-AI **responds accordingly
+Just type into the Serial-Monitor, the **E32-AI** responds accordingly
 
 ---------------------------------------------------------------------------------------------------
 ## Specification & Features
@@ -85,3 +85,36 @@ dec0_ln1.bin
 - To scale up (e.g., d_model=128, L=4, expect ~1–2 MB int8 weights), replace matrix multiplication operations with optimized kernels later (ESP-NN / CMSIS-DSP) for hardware based AI acceleration
 
 ---------------------------------------------------------------------------------------------------
+Project Structure:
+
+esp32-tiny-transformer/
+├── arduino_sketch/
+│   ├── esp32_tiny_transformer.ino
+│   ├── tiny_transformer.h
+│   ├── tiny_transformer.cpp
+│   ├── weights_io.h
+│   ├── weights_io.cpp
+│   ├── bpe_tokenizer.h
+│   ├── bpe_tokenizer.cpp
+│   ├── SDVirtualRAM.h / .cpp
+│   ├── SDVirtualRAM_Meta.h / .cpp
+│   ├── SDVirtualRAMDebugger.h / .cpp
+│   ├── MatrixPageManager.h / .cpp
+│   ├── sd_vram_adapter.cpp
+│   └── README.md   ← sketch-level usage guide
+│
+├── sd_export/   (example SD contents for testing)
+│   ├── index.json
+│   ├── vocab.json
+│   ├── merges.txt
+│   ├── emb_weight_page0.bin
+│   ├── dec0_Wq_page0.bin
+│   └── ... etc
+│
+├── tools/
+│   ├── export_train_quant.py   (Python exporter)
+│   └── sample_corpus.txt
+│
+├── LICENSE
+├── README.md   ← main project doc
+└── CONTRIBUTING.md
